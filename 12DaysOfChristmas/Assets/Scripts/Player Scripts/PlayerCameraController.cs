@@ -14,7 +14,7 @@ public class PlayerCameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Sets playerCharacter as the parent of the Camera Object
-        playerCharacter = this.transform.parent.gameObject;
+        playerCharacter = this.transform.parent.parent.gameObject;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class PlayerCameraController : MonoBehaviour {
         smoothingVector.y = Mathf.Lerp(smoothingVector.y, mouseDirection.y, 1.0f / smoothing);
         mouseLook += smoothingVector;
 
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -90.0f, 90.0f);
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -25.0f, 90.0f);
 
         //Rotates Camera and Parent Body to match Horizontal and Vertical Changes
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
