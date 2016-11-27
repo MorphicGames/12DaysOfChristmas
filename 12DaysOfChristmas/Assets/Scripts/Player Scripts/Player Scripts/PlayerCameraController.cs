@@ -27,7 +27,7 @@ public class PlayerCameraController : MonoBehaviour {
         smoothingVector.y = Mathf.Lerp(smoothingVector.y, mouseDirection.y, 1.0f / smoothing);
         mouseLook += smoothingVector;
 
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -25.0f, 90.0f);
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -25.0f, 15.0f);
 
         //Rotates Camera and Parent Body to match Horizontal and Vertical Changes
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
