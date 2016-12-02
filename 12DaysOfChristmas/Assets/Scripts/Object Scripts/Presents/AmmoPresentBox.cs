@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum AmmoType
+{
+
+}
+
 public class AmmoPresentBox : PresentBox {
+
+    public AmmoType ammoType;
 
     public override Item OpenBox()
     {
-        //Will return a Random Ammo
-        return null;
+        return new Ammo();
     }
 
 

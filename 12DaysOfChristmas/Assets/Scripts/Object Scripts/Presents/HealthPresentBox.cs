@@ -3,10 +3,11 @@ using System.Collections;
 
 public class HealthPresentBox : PresentBox {
 
+    public int healingAmount;
+
     public override Item OpenBox()
     {
-        //Will return a Random Health Drop
-        return null;
+        return new Fruitcake();
     }
 
 }
