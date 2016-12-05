@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AStarUnit : MonoBehaviour
 {
+    List<GameObject> playerTargets;
+
     Transform target;
+
     float speed;
     Vector3[] path;
     int targetIndex;
@@ -17,6 +21,9 @@ public class AStarUnit : MonoBehaviour
 
     void Start()
     {
+        GameObject[] plyrs = GameObject.FindGameObjectsWithTag("Player");
+        playerTargets = new List<GameObject>(plyrs);
+
         target = GameObject.FindGameObjectWithTag("Player").transform;
         grid = GameObject.FindGameObjectWithTag("AI").GetComponent<Grid>();
         speed = Random.Range(1.5f, 2.5f);
@@ -46,6 +53,12 @@ public class AStarUnit : MonoBehaviour
             }
         }
         return;
+    }
+
+    void OnTriggerEnter(Collider c) {
+        if (c.gameObject.tag == "Player") {
+            //Debug.Log(c.gameObject.name);
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
