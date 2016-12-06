@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PresentFactory : MonoBehaviour
 {
-    public static List<GameObject> presentBoxPrefabs;
+    public List<GameObject> presentBoxPrefabs;
 
     private enum PresentType
     {
@@ -13,7 +13,7 @@ public class PresentFactory : MonoBehaviour
         AMMO
     }
 
-    public static void MakePresent(GameObject gObject)
+    public void MakePresent(GameObject gObject)
     {
         PresentType pBType = (PresentType)UnityEngine.Random.Range(0, 3);
         int pBoxModel = UnityEngine.Random.Range(0, presentBoxPrefabs.Count);

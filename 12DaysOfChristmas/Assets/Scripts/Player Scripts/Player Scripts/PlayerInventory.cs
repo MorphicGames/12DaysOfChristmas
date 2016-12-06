@@ -1,19 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour {
 
+    public Canvas inventoryCanvas;
+
+    public Weapon[] playerWeapons = new Weapon[4];
+
     private Dictionary<string, Item> inventoryItemList;
 
 	// Use this for initialization
 	void Start () {
+        inventoryCanvas.enabled = false;
+
         inventoryItemList = new Dictionary<string, Item>();
 	}
 
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void ToggleInventory(bool toggle)
+    {
+        inventoryCanvas.enabled = toggle;
+        if (toggle)
+        {
+            foreach (KeyValuePair<string, Item> i in inventoryItemList)
+            {
+                Debug.Log(i.Key);
+            }
+        }
     }
 
     //Adds New Item to List or if the Item Exists, adds 1 more of it to Item stack
