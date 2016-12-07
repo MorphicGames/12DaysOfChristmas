@@ -27,6 +27,11 @@ public class PlayerHealth : NetworkBehaviour{
 
     // Take damage from trigger entrances or stays
     public void TakeDamage(int _d) {
+        if (!isServer)
+        {
+            return;
+        }
+
         health -= _d;
         Debug.Log(health);
         if (health <= 0) {
@@ -47,6 +52,6 @@ public class PlayerHealth : NetworkBehaviour{
 
     public void OnChangeHealth(int health)
     {
-
+        healthBar.value = health;
     }
 }

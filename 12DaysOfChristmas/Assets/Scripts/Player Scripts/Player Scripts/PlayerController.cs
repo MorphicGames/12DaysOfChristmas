@@ -17,10 +17,8 @@ public class PlayerController : NetworkBehaviour {
 
     private WeaponSlot currentWeaponSlot;
 
+    public GameObject body;
     public PlayerInventory playerInventory;
-
-    public GameObject inventoryPrefab;
-    public GameObject hudPrefab;
 
     public float movementSpeed;
     private float translation;
@@ -32,28 +30,9 @@ public class PlayerController : NetworkBehaviour {
         //Locks Cursor to Center of Screen
         Cursor.lockState = CursorLockMode.Locked;
 
-        //Creates Menus for Player
-        GameObject pI = (GameObject)Instantiate(inventoryPrefab);
-        GameObject hud = (GameObject)Instantiate(hudPrefab);
-
-        //Setting values
-        playerInventory.inventoryCanvas = pI.GetComponent<Canvas>();
-        this.GetComponent<PlayerHealth>().healthBar = hud.GetComponentInChildren<Slider>();
-        this.GetComponent<PlayerHealth>().healthBar.value = this.GetComponent<PlayerHealth>().health;
-
         //Sets Menu and Inventory Screens to be Off
         toggleInventory = false;
         toggleMenu = false;
-
-        //Creates some Ammo for Player
-        Ammo snowballs = new Ammo(100, Ammo.AmmoType.Snowball);
-        Ammo fuel = new Ammo(60, Ammo.AmmoType.Fuel);
-        Ammo presents = new Ammo(10, Ammo.AmmoType.Present);
-
-        //Adds Starting Ammo to Player
-        playerInventory.AddItem("Snowball", snowballs);
-        playerInventory.AddItem("Coal", fuel);
-        playerInventory.AddItem("PresentBoxes", presents);
 
         //Sets Weapon and Toggles Correct Weapon Slot
         currentWeaponSlot = WeaponSlot.SLOT_ONE;
@@ -75,7 +54,7 @@ public class PlayerController : NetworkBehaviour {
         translation *= Time.deltaTime;
         strafe *= Time.deltaTime;
 
-        transform.Translate(strafe, 0.0f, translation);
+        body.transform.Translate(strafe, 0.0f, translation);
 
         //Get Weapon Switch Input
         if (Input.GetButtonDown("Slot1"))
@@ -179,17 +158,17 @@ public class PlayerController : NetworkBehaviour {
         {
             case WeaponSlot.SLOT_ONE:
                 {
-                    playerInventory.playerWeapons[0].Fire();
+                    playerInventory.playerWeapons[0].Fire(playerInventory);
                     break;
                 }
             case WeaponSlot.SLOT_TWO:
                 {
-                    playerInventory.playerWeapons[1].Fire();
+                    playerInventory.playerWeapons[1].Fire(playerInventory);
                     break;
                 }
             case WeaponSlot.SLOT_THREE:
                 {
-                    playerInventory.playerWeapons[2].Fire();
+                    playerInventory.playerWeapons[2].Fire(playerInventory);
                     break;
                 }
         }

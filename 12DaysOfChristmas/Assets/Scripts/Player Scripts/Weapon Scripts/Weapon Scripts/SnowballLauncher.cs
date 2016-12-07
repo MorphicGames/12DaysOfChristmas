@@ -25,11 +25,15 @@ public class SnowballLauncher : Weapon {
         }
     }
 
-    public override void Fire()
+    public override void Fire(PlayerInventory playerInv)
     {
-        Rigidbody proj = (Rigidbody)Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation);
-        proj.AddForce(projectileSpawn.transform.forward * projectileSpeed, ForceMode.Impulse);
-        Destroy(proj.gameObject, 1);
+        if (playerInv.snowballCount - 1 >= 0)
+        {
+            Rigidbody proj = (Rigidbody)Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation);
+            proj.AddForce(projectileSpawn.transform.forward * projectileSpeed, ForceMode.Impulse);
+            Destroy(proj.gameObject, 1);
+            playerInv.snowballCount -= 1;
+        }
     }
 
 }
