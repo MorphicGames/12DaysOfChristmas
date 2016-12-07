@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
 using System.Collections;
 
 [RequireComponent(typeof(SphereCollider))]
-public class PlayerHealth : MonoBehaviour {
+public class PlayerHealth : NetworkBehaviour{
 
     public const int maxHealth = 100;
+
+    public Slider healthBar;
+
+    [SyncVar(hook = "OnChangeHealth")]
     public int health = 0;
 
 	// Use this for initialization
@@ -37,5 +43,10 @@ public class PlayerHealth : MonoBehaviour {
         if (health >= maxHealth) {
             health = maxHealth;
         }
+    }
+
+    public void OnChangeHealth(int health)
+    {
+
     }
 }

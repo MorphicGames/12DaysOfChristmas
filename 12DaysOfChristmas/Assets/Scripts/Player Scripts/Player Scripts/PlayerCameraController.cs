@@ -14,7 +14,7 @@ public class PlayerCameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Sets playerCharacter as the parent of the Camera Object
-        playerCharacter = this.transform.parent.parent.gameObject;
+        playerCharacter = this.transform.parent.parent.parent.gameObject;
 	}
 	
 	// Update is called once per frame
