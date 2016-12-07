@@ -3,11 +3,10 @@ using System.Collections;
 
 public class HealthPresentBox : PresentBox {
 
-    public int healingAmount;
-
     public override Item OpenBox()
     {
-        return new Fruitcake();
+        int healingAmount = Random.Range(10, 50);
+        return new Fruitcake(healingAmount);
     }
 
 }

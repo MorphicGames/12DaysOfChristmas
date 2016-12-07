@@ -5,7 +5,8 @@ public class CoalPresentBox : PresentBox {
 
     public override Item OpenBox()
     {
-        return new Coal();
+        int amount = Random.Range(1, 100);
+        return new Coal(amount);
     }
 
 }
