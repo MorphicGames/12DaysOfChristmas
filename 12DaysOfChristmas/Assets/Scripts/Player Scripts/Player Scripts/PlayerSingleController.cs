@@ -143,17 +143,17 @@ public class PlayerSingleController : MonoBehaviour
         {
             case WeaponSlot.SLOT_ONE:
                 {
-                    playerInventory.playerWeapons[0].Fire();
+                    //playerInventory.playerWeapons[0].Fire();
                     break;
                 }
             case WeaponSlot.SLOT_TWO:
                 {
-                    playerInventory.playerWeapons[1].Fire();
+                    //playerInventory.playerWeapons[1].Fire();
                     break;
                 }
             case WeaponSlot.SLOT_THREE:
                 {
-                    playerInventory.playerWeapons[2].Fire();
+                    //playerInventory.playerWeapons[2].Fire();
                     break;
                 }
         }

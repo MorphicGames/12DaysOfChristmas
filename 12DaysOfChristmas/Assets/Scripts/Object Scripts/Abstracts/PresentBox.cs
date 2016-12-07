@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class PresentBox : Item {
+public class PresentBox : NetworkBehaviour {
 
-    public virtual Item OpenBox()
+    public virtual int OpenBox()
     {
-        //Unimplemented Item Return
-        return null;
+        Debug.Log("Unimplimented");
+        return 0;
     }
 
 }

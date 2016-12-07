@@ -20,11 +20,15 @@ public class PresentLauncher : Weapon {
         }
     }
 
-    public override void Fire()
+    public override void Fire(PlayerInventory playerInv)
     {
-        Rigidbody proj = (Rigidbody)Instantiate(presentPrefab, projectileSpawn.position, projectileSpawn.rotation);
-        proj.AddForce(projectileSpawn.transform.forward * projectileSpeed, ForceMode.Impulse);
-        Destroy(proj.gameObject, 2);
+        if (playerInv.presentCount - 1 >= 0)
+        {
+            Rigidbody proj = (Rigidbody)Instantiate(presentPrefab, projectileSpawn.position, projectileSpawn.rotation);
+            proj.AddForce(projectileSpawn.transform.forward * projectileSpeed, ForceMode.Impulse);
+            Destroy(proj.gameObject, 2);
+            playerInv.presentCount -= 1;
+        }
     }
 
 }

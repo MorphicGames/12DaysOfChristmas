@@ -9,7 +9,6 @@ public class PresentFactory : NetworkBehaviour
 
     private enum PresentType
     {
-        COAL,
         CAKE,
         AMMO
     }
@@ -17,7 +16,7 @@ public class PresentFactory : NetworkBehaviour
     [Command]
     public void CmdMakePresent(GameObject gObject)
     {
-        PresentType pBType = (PresentType)UnityEngine.Random.Range(0, 3);
+        PresentType pBType = (PresentType)UnityEngine.Random.Range(0, 2);
         int pBoxModel = UnityEngine.Random.Range(0, presentBoxPrefabs.Count);
 
         GameObject Box = (GameObject)Instantiate(presentBoxPrefabs[pBoxModel], gObject.transform.position + new Vector3(0.0f, 1.0f, 0.0f), gObject.transform.rotation);
@@ -28,24 +27,16 @@ public class PresentFactory : NetworkBehaviour
                 {
                     //Create Ammo Box
                     AmmoPresentBox aBox = Box.AddComponent<AmmoPresentBox>();
-                    aBox.amount = 1;
-                    aBox.name = aBox.itemName = "Ammo Box";
+                    aBox.name = "Ammo Box";
+                    aBox.GetComponent<NetworkIdentity>().serverOnly = true;
                     break;
                 }
             case (PresentType.CAKE):
                 {
                     //Create Cake Box
                     HealthPresentBox hBox = Box.AddComponent<HealthPresentBox>();
-                    hBox.amount = 1;
-                    hBox.name = hBox.itemName = "Cake Box";
-                    break;
-                }
-            case (PresentType.COAL):
-                {
-                    //Create Coal Box
-                    CoalPresentBox cBox = Box.AddComponent<CoalPresentBox>();
-                    cBox.amount = 1;
-                    cBox.name = cBox.itemName = "Coal Box";
+                    hBox.name = "Health Box";
+                    hBox.GetComponent<NetworkIdentity>().serverOnly = true;
                     break;
                 }
             default:

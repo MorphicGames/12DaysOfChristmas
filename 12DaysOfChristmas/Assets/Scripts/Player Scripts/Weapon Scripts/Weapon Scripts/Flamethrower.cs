@@ -10,7 +10,7 @@ public class Flamethrower : Weapon {
 
     }
 
-    public override void Fire()
+    public override void Fire(PlayerInventory playerInv)
     {
         
     }
