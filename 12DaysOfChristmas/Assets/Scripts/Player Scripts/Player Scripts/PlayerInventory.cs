@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerInventory : MonoBehaviour {
+public class PlayerInventory : NetworkBehaviour {
 
     public Canvas inventoryCanvas;
 
-    public Weapon[] playerWeapons = new Weapon[4];
+    public Weapon[] playerWeapons = new Weapon[3];
 
-    private Dictionary<string, Item> inventoryItemList;
+    public Dictionary<string, Item> inventoryItemList;
 
 	// Use this for initialization
 	void Start () {
         inventoryCanvas.enabled = false;
-
-        inventoryItemList = new Dictionary<string, Item>();
 	}
 
     // Update is called once per frame
@@ -33,6 +32,17 @@ public class PlayerInventory : MonoBehaviour {
                 Debug.Log(i.Key);
             }
         }
+    }
+
+    public Item GetItem(string name)
+    {
+        Item tmp;
+        inventoryItemList.TryGetValue(name, out tmp);
+        if (tmp)
+        {
+
+        }
+        return tmp;
     }
 
     //Adds New Item to List or if the Item Exists, adds 1 more of it to Item stack

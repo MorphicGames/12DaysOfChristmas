@@ -1,0 +1,62 @@
+Initialize engine version: 5.4.2f2 (b7e030c65c9b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 840M (ID=0x1341)
+    Vendor:   NVIDIA
+    VRAM:     2019 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.048 seconds
+Platform assembly: C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\morph\Documents\GitHub\12DaysOfChristmas\12DaysOfChristmas\TestNetwork_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.794549 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 242c -> priority: 1 
+Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+Cannot open socket on ip {*} and port {7777}; check please your network, most probably port has been already occupied
+ 
+(Filename:  Line: 492)
+
+StartServer listen failed.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerInventory.AddItem (System.String name, .Item value) [0x00000] in <filename unknown>:0 
+  at PlayerController.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerInventory.AddItem (System.String name, .Item value) [0x00000] in <filename unknown>:0 
+  at PlayerController.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Opening Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerInventory.AddItem (System.String name, .Item value) [0x00000] in <filename unknown>:0 
+  at PlayerController.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Opening Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+

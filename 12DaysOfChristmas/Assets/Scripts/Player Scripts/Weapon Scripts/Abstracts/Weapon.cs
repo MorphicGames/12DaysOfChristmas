@@ -3,6 +3,14 @@ using System.Collections;
 
 public class Weapon : Item {
 
-    public GameObject   projectileSpawn;
+    public virtual void Hide(bool toggle)
+    {
+        Debug.Log("Unimplimented");
+    }
+
+    public virtual void Fire()
+    {
+        Debug.Log("Unimplimented");
+    }
 
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AStarUnit : MonoBehaviour
 {
-    List<GameObject> playerTargets;
+    public List<GameObject> playerTargets;
 
     Transform target;
 
