@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
 
-public class Grid : MonoBehaviour
+public class Grid : NetworkBehaviour
 {
     // Display gizmos?
     public bool displayGridGizmos;

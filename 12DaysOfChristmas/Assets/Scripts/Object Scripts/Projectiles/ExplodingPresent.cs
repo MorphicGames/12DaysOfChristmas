@@ -14,7 +14,7 @@ public class ExplodingPresent : MonoBehaviour {
         if (eHealth != null)
         {
             //If it exists, Enemy Takes Damage and Destroy Present, then get out of Method
-            eHealth.TakeDamage(20);
+            eHealth.TakeDamage(25);
             Destroy(this.gameObject);
             return;
         }

@@ -10,8 +10,11 @@ public class EnemyHealth : NetworkBehaviour {
     [SyncVar]
     public int currentHealth = 0;
 
+    GameProgression gp;
+
     void Start()
     {
+        gp = GameObject.FindGameObjectWithTag("GameProgression").GetComponent<GameProgression>();
         currentHealth = maxHealth;
     }
 
@@ -19,7 +22,7 @@ public class EnemyHealth : NetworkBehaviour {
     {
         if (col.gameObject.tag == "Snowball")
         {
-            TakeDamage(5);
+            TakeDamage(10);
         }
     }
 
@@ -31,11 +34,17 @@ public class EnemyHealth : NetworkBehaviour {
         }
 
         currentHealth -= amount;
+        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             //Destroy Object on Server, Update Clients
+
+
             PresentFactory pf = FindObjectOfType<PresentFactory>();
             pf.CmdMakePresent(this.gameObject);
+
+            NetworkServer.Destroy(gameObject);
+            gp.numEnemiesLeft--;
         }
     }
 }

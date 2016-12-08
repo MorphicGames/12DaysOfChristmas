@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Networking;
 
-public class PathRequestManager : MonoBehaviour
+public class PathRequestManager : NetworkBehaviour
 {
     Queue<PathRequest> pathRequestQueue = new Queue<PathRequest>();
     PathRequest currentPathRequest;
