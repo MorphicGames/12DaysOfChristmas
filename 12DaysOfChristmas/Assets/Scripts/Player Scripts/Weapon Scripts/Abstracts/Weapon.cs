@@ -9,9 +9,13 @@ public class Weapon : NetworkBehaviour {
         Debug.Log("Unimplimented");
     }
 
-    public virtual void Fire(PlayerInventory playerInv)
+    public virtual void Fire(PlayerInventory playerInv, float deltaTime)
     {
         Debug.Log("Unimplimented");
     }
 
+    public virtual void CeaseFire()
+    {
+
+    }
 }

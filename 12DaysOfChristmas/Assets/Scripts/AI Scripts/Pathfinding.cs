@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Networking;
 
 
 // A* Pathfinding Calculator Class
@@ -11,6 +12,8 @@ public class Pathfinding : MonoBehaviour
 {
     PathRequestManager requestManager;
     Grid grid;
+
+    public static Transform playerTarget;
 
     void Awake()
     {
@@ -22,6 +25,13 @@ public class Pathfinding : MonoBehaviour
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
     {
         StartCoroutine(FindPath(startPos, targetPos));
+    }
+
+    void Update()
+    {
+        playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        if (playerTarget != null)
+            Debug.Log(playerTarget.transform.position);
     }
 
 

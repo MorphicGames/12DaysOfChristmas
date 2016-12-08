@@ -17,9 +17,21 @@ public class Flamethrower : Weapon {
         }
     }
 
-    public override void Fire(PlayerInventory playerInv)
+    public override void Fire(PlayerInventory playerInv, float deltaTime)
     {
-        Flame.Play();
+        if (playerInv.fuelCount - 1 >= 0)
+        {
+            Flame.Play();
+            playerInv.fuelCount -= 1;
+        }
+        else
+        {
+            Flame.Stop();
+        }
     }
 
+    public override void CeaseFire()
+    {
+        Flame.Stop();
+    }
 }

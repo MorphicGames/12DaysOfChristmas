@@ -8,6 +8,9 @@ public class PresentLauncher : Weapon {
     public Rigidbody presentPrefab;
     public Transform projectileSpawn;
 
+    private float elapsedTime;
+    private float timeBetweenShots = 0.5f;
+
     public override void Hide(bool toggle)
     {
         if (toggle)
@@ -20,14 +23,19 @@ public class PresentLauncher : Weapon {
         }
     }
 
-    public override void Fire(PlayerInventory playerInv)
+    public override void Fire(PlayerInventory playerInv, float deltaTime)
     {
-        if (playerInv.presentCount - 1 >= 0)
+        elapsedTime += deltaTime;
+        if (elapsedTime >= timeBetweenShots)
         {
-            Rigidbody proj = (Rigidbody)Instantiate(presentPrefab, projectileSpawn.position, projectileSpawn.rotation);
-            proj.AddForce(projectileSpawn.transform.forward * projectileSpeed, ForceMode.Impulse);
-            Destroy(proj.gameObject, 2);
-            playerInv.presentCount -= 1;
+            if (playerInv.presentCount - 1 >= 0)
+            {
+                Rigidbody proj = (Rigidbody)Instantiate(presentPrefab, projectileSpawn.position, projectileSpawn.rotation);
+                proj.AddForce(projectileSpawn.transform.forward * projectileSpeed, ForceMode.Impulse);
+                Destroy(proj.gameObject, 2);
+                playerInv.presentCount -= 1;
+            }
+            elapsedTime = 0.0f;
         }
     }
 

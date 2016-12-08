@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
 public class AStarUnit : MonoBehaviour
 {
-    public List<GameObject> playerTargets;
+    //public List<GameObject> playerTargets;
 
     Transform target;
 
@@ -18,25 +19,38 @@ public class AStarUnit : MonoBehaviour
     Node currentNode;
     Node targetNode;
 
+    bool start = true;
 
     void Start()
     {
-        GameObject[] plyrs = GameObject.FindGameObjectsWithTag("Player");
-        playerTargets = new List<GameObject>(plyrs);
-
-        target = GameObject.FindGameObjectWithTag("Player").transform;
         grid = GameObject.FindGameObjectWithTag("AI").GetComponent<Grid>();
+
         speed = Random.Range(1.5f, 2.5f);
 
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        targetNode = grid.NodeFromWorldPoint(target.position);
-        currentNode = targetNode;
+        //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+
+        //targetNode = grid.NodeFromWorldPoint(target.position);
+        //currentNode = targetNode;
     }
+
+    //void OnPlayerConnected(NetworkPlayer player) {
+    //    Debug.Log("Player connected from " + player.ipAddress + ":" + player.port);
+    //}
 
     void Update()
     {
+        target = Pathfinding.playerTarget;
+
+        if (start && target != null) {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            currentNode = targetNode;
+            start = false;
+        }
+
         targetNode = grid.NodeFromWorldPoint(target.position);
+
         time += Time.deltaTime;
 
         // is the player still on the same node as before?
@@ -52,6 +66,7 @@ public class AStarUnit : MonoBehaviour
                 currentNode = targetNode;
             }
         }
+
         return;
     }
 

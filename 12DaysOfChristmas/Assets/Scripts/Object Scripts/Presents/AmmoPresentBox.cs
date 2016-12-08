@@ -5,12 +5,17 @@ public class AmmoPresentBox : PresentBox {
 
     public void OnCollisionEnter(Collision col)
     {
-        Debug.Log("Collision Registered");
+        //Debug.Log("Collision Registered");
 
         GameObject hit = col.gameObject;
+
+        if (hit.name != "RobPlayerPrefab(Clone)")
+            return;
+
         PlayerInventory pInv = hit.GetComponent<PlayerInventory>();
         if (pInv)
         {
+            //Debug.Log("Player has Inventory!");
             int choice = Random.Range(0, 3);
             switch (choice)
             {
@@ -30,6 +35,7 @@ public class AmmoPresentBox : PresentBox {
                         break;
                     }
             }
+            Destroy(this.gameObject);
         }
     }
 
