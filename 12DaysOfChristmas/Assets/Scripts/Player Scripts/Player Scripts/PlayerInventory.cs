@@ -27,9 +27,9 @@ public class PlayerInventory : NetworkBehaviour {
     public override void OnStartServer() {
         inventoryCanvas.enabled = false;
 
-        snowballCount = 100;
-        presentCount = 15;
-        fuelCount = 50;
+        snowballCount = 1000;
+        presentCount = 25;
+        fuelCount = 500;
 
         SetInventoryText();
 	}

@@ -1,0 +1,102 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport/Managed/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Standalone/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Standalone/UnityEngine.Networking.dll"
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_4_2
+-define:UNITY_5_4
+-define:UNITY_5
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_EDITOR_RETINA
+-define:ENABLE_RETINA_GUISTYLES
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_SPRITE_POLYGON
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:INCLUDE_DIRECTX12
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
+-define:ENABLE_EDITOR_TESTS_RUNNER
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+"Assets/Scripts/AI Scripts/AStarUnit.cs"
+"Assets/Scripts/AI Scripts/Grid.cs"
+"Assets/Scripts/AI Scripts/Heap.cs"
+"Assets/Scripts/AI Scripts/Node.cs"
+"Assets/Scripts/AI Scripts/PathRequestManager.cs"
+"Assets/Scripts/AI Scripts/Pathfinding.cs"
+"Assets/Scripts/Enemy Scripts/EnemyHealth.cs"
+"Assets/Scripts/Game Logic Scripts/GameProgression.cs"
+"Assets/Scripts/Object Scripts/Abstracts/PresentBox.cs"
+"Assets/Scripts/Object Scripts/Factories/PresentFactory.cs"
+"Assets/Scripts/Object Scripts/Presents/AmmoPresentBox.cs"
+"Assets/Scripts/Object Scripts/Presents/HealthPresentBox.cs"
+"Assets/Scripts/Object Scripts/Projectiles/ExplodingPresent.cs"
+"Assets/Scripts/Object Scripts/Projectiles/Snowball.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/PauseMenu.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/PlayerCameraController.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/PlayerController.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/PlayerHealth.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/PlayerInventory.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/PlayerSingleController.cs"
+"Assets/Scripts/Player Scripts/Player Scripts/ShaderMenu.cs"
+"Assets/Scripts/Player Scripts/Weapon Scripts/Abstracts/Weapon.cs"
+"Assets/Scripts/Player Scripts/Weapon Scripts/Weapon Scripts/Flamethrower.cs"
+"Assets/Scripts/Player Scripts/Weapon Scripts/Weapon Scripts/PresentLauncher.cs"
+"Assets/Scripts/Player Scripts/Weapon Scripts/Weapon Scripts/SnowballLauncher.cs"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class PlayerCameraController : MonoBehaviour {
+public class PlayerCameraController : NetworkBehaviour {
 
     Vector2 mouseLook;
     Vector2 smoothingVector;
